@@ -1,0 +1,37 @@
+<%= content_for :breadcrumb do %>
+<%= print_breadcrumbs([
+  [t('breadcrumb.camps.index', :default => 'Campi'), camps_path],
+  [@camp.title]
+]).html_safe %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @camp.title %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @camp.place %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @camp.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @camp.end_date %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @camp.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_camp_path(@camp) %> |
+<%= link_to 'Back', camps_path %>
