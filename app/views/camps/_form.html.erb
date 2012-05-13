@@ -5,14 +5,14 @@
       <%= f.error_notification %>
     </div>
   <% end %>
-  <%= f.input :title %>
-  <%= f.input :place %>
-  <%= f.input :start_date, :as => :datepicker %>
-  <%= f.input :end_date, :as => :datepicker %>
-  <%= f.input :comment %>
+  <%= f.input :title, :label => "Descrizione del campo" %>
+  <%= f.input :place , :label => "Luogo" %>
+  <%= f.input :start_date, :as => :datepicker , :label => "Inizio" %>
+  <%= f.input :end_date, :as => :datepicker , :label => "Termine" %>
+  <%= f.input :comment , :label => "Commento", :input_html => { :class => 'input-xlarge', :rows => 8 } %>
 
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= f.button :submit, :value => "Crea il campo", :class => 'btn-primary' %>
     <%= submit_tag t('helpers.buttons.cancel', :default => 'Cancella'), :type => :reset, :class => "btn btn-danger" %>
   </div>
 <% end %>

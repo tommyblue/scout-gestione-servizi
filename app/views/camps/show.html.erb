@@ -35,8 +35,8 @@
 <% if @camp.helps.size > 0 %>
   <h2>Servizi confermati</h2>
   <ul>
-  <% @camp.helps.each do |camp| %>
-    <li><%= camp.name %></li>
+  <% @camp.helps.each do |help| %>
+    <li><%= help.name %> - <%= help.email %> <em>(dal <%=l help.start_date %> al <%=l help.end_date %>) <%= help.comment %></em></li>
   <% end %>
   </ul>
 <% end %>
