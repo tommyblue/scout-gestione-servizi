@@ -1,0 +1,15 @@
+<%= simple_form_for([@camp,@help]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, :label => "Nome" %>
+    <%= f.input :email %>
+    <%= f.input :start_date, :label => "Data di arrivo", :as => :datepicker %>
+    <%= f.input :end_date, :label => "Data di partenza", :as => :datepicker %>
+    <%= f.input :comment, :label => "Commento" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -8,30 +8,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Titolo:</b>
   <%= @camp.title %>
 </p>
 
 <p>
-  <b>Place:</b>
+  <b>Luogo:</b>
   <%= @camp.place %>
 </p>
 
 <p>
-  <b>Start date:</b>
-  <%= @camp.start_date %>
+  <b>Inizio:</b>
+  <%=l @camp.start_date %>
 </p>
 
 <p>
-  <b>End date:</b>
-  <%= @camp.end_date %>
+  <b>Termine:</b>
+  <%=l @camp.end_date %>
 </p>
 
 <p>
-  <b>Comment:</b>
+  <b>Commento:</b>
   <%= @camp.comment %>
 </p>
 
-
-<%= link_to 'Edit', edit_camp_path(@camp) %> |
-<%= link_to 'Back', camps_path %>
+<% if @camp.helps.size > 0 %>
+  <h2>Servizi confermati</h2>
+  <ul>
+  <% @camp.helps.each do |camp| %>
+    <li><%= camp.name %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= link_to 'Nuovo servizio', new_camp_help_path(@camp), :class => 'btn btn-primary' %>
+<%= link_to 'Modifica', edit_camp_path(@camp), :class => 'btn btn-primary' %>
+<%= link_to 'Indietro', camps_path, :class => 'btn btn-danger' %>
