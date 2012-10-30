@@ -26,12 +26,14 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header"><%=t '.sidebar.title', :default => "Campi" %></li>
-              <% Camp.all.each do |camp| %>
-        			  <li><%= link_to camp.title, camp_path(camp) %></li>
-        			<% end %>
-            </ul>
+            <% if current_user %>
+              <ul class="nav nav-list">
+                <li class="nav-header"><%=t '.sidebar.title', :default => "Campi" %></li>
+                <% Camp.all.each do |camp| %>
+                  <li><%= link_to camp.title, camp_path(camp) %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
